@@ -1,0 +1,72 @@
+body {
+    background-color: rgba(65, 65, 65, 0.856);
+}
+div.main {
+    margin: 0;
+    width: 99vw;
+    height: 95vh;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* flex-flow: row-reverse wrap-reverse; */
+}
+div.tohtml, div.tojavascript, div.toxml, div.tohtml5 {
+    /* position: fixed; */
+    width: 220px;
+    height: 220px;
+    background-color: rgb(255, 255, 255);
+    /* display: inline-flex; */
+    margin-left: auto;
+    margin-right: auto;
+    margin: 15px;
+    box-shadow: 0px 3px 10px 5px rgba(44, 44, 44, 0.856);
+    font-size: 70px;
+    color: white;
+}
+/* .tohtml:hover{
+    width: 225px;
+    height: 225px;
+} */
+div.tohtml {
+    background-color: rgb(166, 214, 133);
+}
+div.tojavascript {
+    background-color: rgb(255, 214, 78);
+}
+div.toxml {
+    background-color: rgb(76, 191, 219);
+}
+div.tohtml5 {
+    background-color: rgb(191, 100, 214);
+}
+/* div.tohtml:hover, div.tojavascript:hover, div.toxml:hover, div.tohtml5:hover  {
+    flex-shrink: 5;
+} */
+div.tohtml:hover, div.tojavascript:hover, div.toxml:hover, div.tohtml5:hover {
+    /* margin-left: 5px;
+    width: 230px;
+    height: 230px;
+    transition: 0.5s; */
+    transform: scale(1.1, 1.1);
+}
+/* затемнение остальных блоков */
+/* div.tojavascript:hover ~ div.toxml { opacity: 0.7;}
+div.tojavascript:hover ~ div.tohtml5 { opacity: 0.7;} *//* 
+div.tohtml:hover ~ div.tojavascript { opacity: 0.7;}
+div.tohtml:hover ~ div.toxml { opacity: 0.7;}
+div.tohtml:hover ~ div.tohtml5 { opacity: 0.7;}
+div.toxml:hover ~ div.tohtml { opacity: 0.7;}
+div.toxml:hover ~ div.tojavascript { opacity: 0.7;}
+div.toxml:hover ~ div.tohtml5 { opacity: 0.7;}
+div.tohtml5:hover ~ div.tohtml { opacity: 0.7;}
+div.tohtml5:hover ~ div.tojavascript { opacity: 0.7;}
+div.tohtml5:hover ~ div.toxml { opacity: 0.7;} */
+a {
+    outline: none;
+}
+img {
+    display: block; 
+    margin:5px auto 25px;
+}
