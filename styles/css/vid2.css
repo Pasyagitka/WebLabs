@@ -1,0 +1,50 @@
+h1, h2, h3, span {
+    font-family: "brush script mt";
+    font-size: 26px;
+    font-style: oblique;
+    font-weight: bolder;
+    color: purple
+}
+h1, h2, h3 {
+text-align: center;
+}
+a:link {                                /*Задание 2. Оформление ссылок*/
+    color: rgb(109, 33, 153); 
+}
+a:visited {
+    color: rgb(52, 13, 102);
+}
+a:hover {
+    color: #c2219f; 
+}
+a:active {
+    color: rgb(240, 95, 131); 
+}
+table {         /*Задание 3. Таблица*/
+    background-color: #bd9ac2f8;
+    color: black;
+    border-spacing: 0 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+th, td {
+    border: 5px solid Thistle;
+}
+th {
+    padding: 10px 20px;
+    vertical-align: middle;
+    text-align: center;
+    width: 300px;
+    height: 2px;
+}
+td {
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
