@@ -1,0 +1,29 @@
+body {
+	background-position: right, top;
+    background: Thistle;
+    text-align: center;
+    word-spacing: 2px; 
+    letter-spacing: 3px;	
+    font-size: 20px;
+    font-style: oblique;
+    font-weight: bolder;
+    color: white;
+}
+table {         
+    background-color: #bd9ac2f8;
+    color: black;
+    border-spacing: 0 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+}
+td {
+    border: 5px solid rgb(255, 255, 255);
+    vertical-align: middle;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+}
