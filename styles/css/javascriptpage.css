@@ -118,11 +118,11 @@ div.block2 a {
     background-color: rgb(255, 203, 91);
 }
 .block:nth-child(1), .block:nth-child(5){
-    background-image: url(../images/yellow5.jpg);
+    background-image: url(../../images/yellow5.jpg);
     background-size: cover;
 }
 .block:nth-child(9), .block:nth-child(12) {
-    background-image: url(../images/yellow10.jpg);
+    background-image: url(../../images/yellow10.jpg);
     background-size: cover;
 }
 div.block:hover, div.block2:hover {
