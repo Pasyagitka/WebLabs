@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>9.Графики</title>
+    <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>	
+	<script type='text/javascript' src='js/jquery.circulate.js'></script>
+    <script>
+        $(document).ready(function(){
+        $('input[type=radio][name=func]').change(function() {
+        if (this.value == 'x^2') {
+            canvas.width = 400;
+            var ctx=canvas.getContext("2d");
+            for(var i=-20;i<20;i+=0.01){
+                ctx.fillStyle=$(".colors").val();
+                ctx.fillRect(200+i*10,250-Math.pow(i,2),1,1);
+            }
+        }
+        else if (this.value == 'x^3') {
+            canvas.width = 400;
+            var ctx=canvas.getContext("2d");
+            for(var i=-20;i<20;i+=0.01){
+                ctx.fillStyle=$(".colors").val(); 
+                ctx.fillRect(200+i*10,250-Math.pow(i,3),1,1);
+            }   
+        }
+        else if (this.value == 'sin') {
+            canvas.width = 400;
+            var ctx=canvas.getContext("2d");
+            for(var i=-20;i<20;i+=0.01){
+                ctx.fillStyle=$(".colors").val(); 
+                ctx.fillRect(200+i*10,250-Math.sin(i*0.5)*20,1,1);
+            }
+        }
+        else {
+            canvas.width = 400;
+            var ctx=canvas.getContext("2d");
+            for(var i=-20;i<20;i+=0.01){
+                ctx.fillStyle=$(".colors").val(); 
+                ctx.fillRect(200+i*10,250-Math.cos(i*0.5)*20,1,1);
+            }
+        }
+        }); 
+    }); 
+    </script>
+    </head>
+    <body>
+        <div style="width: 600px; height: 550px;  margin:auto; margin-right:auto;">
+            <canvas id="canvas" width="400px" height="500px" style="background:white; border: 2px dashed;"></canvas><br>
+            <input type="radio" name="func" value="x^2">   y=x^2
+            <input type="radio" name="func" value="x^3">   y=x^3
+            <input type="radio" name="func" value="sin(x)" > y=sin(x)
+            <input type="radio" name="func" value="cos(x)"> y=cos(x)</br>
+            <label for="colors">Выберите цвет графика:</label>
+            <select class="colors">
+                <option value="#7B68EE">MediumSlateBlue</option>
+                <option value="#4169E1">DeepSkyBlue</option>
+                <option value="#191970">DeepPink</option>
+            </select>
+        </div>
+    </body>
+</html>
