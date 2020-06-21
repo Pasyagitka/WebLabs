@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<groupmate>
+	<lastname>Иванов</lastname>
+	<firstname>Иван</firstname>
+    <middlename>Иванович</middlename>
+	<passing>5</passing>
+    <birthyear>2000</birthyear>
+</groupmate>

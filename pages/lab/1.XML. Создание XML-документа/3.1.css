@@ -1,0 +1,26 @@
+university {  
+    display:block;
+    text-align:center;
+    margin:10px 20px 10px 20px;
+    margin-top:12pt;
+    border-style:double;
+    border-color:#8C0088;
+    background: rgb(218, 184, 235);
+    font-size:15pt;
+}
+name   { 
+    font-style:italic;
+    text-align:center;
+    font-weight:bold;
+}
+passing, pages, location   {  
+    display:block;
+    text-align:center;
+    border-top:double;
+    border-color:#8C0088;
+}
+poit{  
+    display:block;
+    margin:50px 300px;
+    border-style:solid;
+}

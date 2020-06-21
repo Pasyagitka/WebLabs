@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+<script>
+    function draw(){
+    var canvas = document.getElementById('draw');
+    var ctx=canvas.getContext("2d");
+    if (canvas.getContext) {
+    var grad = ctx.createLinearGradient(0,0,0,100);
+    grad.addColorStop(0.5,'green');
+    grad.addColorStop(1.0,'lightgreen');
+    ctx.fillStyle=grad;
+    ctx.fillRect(20,10,120,100);
+    ctx.shadowOffsetX=5;
+    ctx.shadowOffsetY=3;
+    ctx.shadowBlur=5;
+    ctx.shadowColor='black';
+    ctx.fillStyle='lightyellow';
+    ctx.fillRect(50,40,55,55);
+    ctx.fillStyle='#60011d';
+    ctx.beginPath();  
+    ctx.moveTo(45,40);
+    ctx.lineTo(75,10);
+    ctx.lineTo(110,40);
+    ctx.closePath();
+    ctx.fill();
+    ctx.shadowOffsetX=0;
+    ctx.shadowOffsetY=0;
+    ctx.shadowBlur=0;
+    ctx.fillStyle='lightblue';
+    ctx.fillRect(68,57,20,20);
+    ctx.font='25px Courier New';
+    ctx.fillStyle='white';
+    ctx.fillText("ЗЕИ", 25, 30);
+    }
+    }
+</script>
+</head>
+<body>
+    <canvas id='draw' width='160' height='120' style="background:rgb(255, 255, 255); border: 2px dashed; " onclick="draw()"/>   
+</body>
+</html>

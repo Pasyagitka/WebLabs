@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5_1_2</title>
+    <style>
+        mark {
+         background: #cd82ff49;
+         padding: 0 3px;
+         border: 1px dashed #333;
+        }
+    </style>
+    <script>
+        function formfill(){
+            var span1 = document.getElementById('email');
+            span1.innerHTML  = document.forms[0].elements[0].value;
+            var span2 = document.getElementById('tel');
+            span2.innerHTML  = document.forms[0].elements[1].value;
+        }
+    </script>
+</head>
+<body>
+   <header><h1 align="center">Я, <mark>Зинович Елизавета Игоревна</mark>, изучаю HTML5</h1></header>
+   <nav>
+    <figure>
+        <img src='pics.jpg' width='50'/>
+        <figcaption>Лиса</figcaption>
+    </figure>        
+   </nav> 
+   <div align="center"><video src="Bee30470.mp4" width="60%" controls="controls"></video></div>
+   <div align="center"><audio src="Sleep Away.mp3" controls="controls"> </audio></div>
+   <form name=myform id="myform">
+       <p>Введите email<input type="email" required oninput="formfill()"></p>
+        <p>Введите номер телефона<input type="tel" placeholder="80445634337" oninput="formfill()"></p>
+        <p>Введите знак зодиака<input list="zodiac" autofocus oninput="formfill()"></p>
+        <datalist id="zodiac">
+            <option value="Овен"></option>
+            <option value="Козерог"></option>
+            <option value="Дева"></option>
+        </datalist>   
+    </form> 
+   <form oninput="x.value=parseInt(a.value)"> 
+    <p>Выберите возраст:</p>
+    <input type="range" name="a" value="50">
+    <output name="x" for="a"></output>
+  </form> 
+
+   <input type="button" value="Узнать координаты:" onclick="getCoordinates()">     
+   <script>
+    function getCoordinates() {
+        navigator.geolocation.getCurrentPosition(showCoordinates);
+    }
+    function showCoordinates(position) {
+        alert("Широта: " + position.coords.latitude + " Долгота: " + position.coords.longitude);
+    }
+    </script>
+    <footer><h5 align="center">ЗЕИ, 1 курс, 4 группа, email: <span id="email"></span>, телефон: <span id="tel"></span></h5></footer>
+</body>
+</html>

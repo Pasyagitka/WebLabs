@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доп1</title>
+    <style>
+        @keyframes sizee {
+            0% {  font-size:25px }
+            50% { font-size:40px }
+            100% {  font-size:25px }
+        }
+        @keyframes fill {
+            0% { fill: rgb(219, 29, 29); }
+            15% { fill: rgb(255, 174, 0); }
+            30% { fill: rgb(255, 251, 0); }
+            45% { fill: #1bce4f; }
+            60% { fill: #00aeff; }
+            80% { fill: #6d12ff; }
+            90% { fill: DarkMagenta; }
+            100% { fill:rgb(228, 13, 146); }
+        }
+        @keyframes stroke {
+            0% { stroke: rgb(219, 29, 29); }
+            15% { stroke: rgb(255, 174, 0); }
+            30% { stroke: rgb(255, 251, 0); }
+            45% { stroke: #1bce4f; }
+            60% { stroke: #00aeff; }
+            80% { stroke: #6d12ff; }
+            90% { stroke: DarkMagenta; }
+            100% { stroke:rgb(228, 13, 146); }
+        }
+        #text1 {
+            text-anchor: start;
+            text-decoration: line-through;
+            fill: DarkMagenta;
+            animation: fill 2s infinite; 
+        }
+        #text2 {
+            text-anchor: middle;
+            text-decoration: underline;
+            fill: rgb(0, 14, 139);
+            letter-spacing: 5px;
+            animation: sizee 2s infinite;
+        }
+        #text3 {
+            font-size: 50px;
+            text-anchor: end;
+            fill: rgb(255, 255, 255);
+            letter-spacing: 5px;
+            animation: stroke 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <svg>
+        <text id="text2" x="300" y="30">
+           Text Text Text Text Text Text 
+        </text>
+     </svg>
+     <br>
+    <svg width="700" height="200">
+        <defs>
+            <path id="idname" fill="white" stroke="white" d="M6,150C49.63,93,105.79,36.65,156.2,47.55,207.89,58.74,213,
+            131.91,264,150c40.67,14.43,108.57-6.91,229-145"/>
+        </defs>
+            <use xlink:href="#idname"/>
+            <text id="text1" x="30" y="50"  text-anchor="start;" text-decoration="underline;" fill="DarkMagenta;">
+                <textPath xlink:href="#idname" font-size="25px" letter-spacing="0px">Text Text Text Text Text Text Text Text Text Text</textPath> 
+            </text>
+    </svg>
+    <br>
+    <svg>
+        <text id="text3" x="500" y="50" textLength="500"> 
+           Text Text Text Text Text
+        </text>
+     </svg>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<input type="file" onchange="processFiles(this.files)">
+<script>
+function processFiles(files) { // После загрузки файла
+    let file = files[0];
+    reader = new FileReader(); // Читаем файл
+    reader.onload = function (e) {
+    xml = e.target.result; // Записываем в переменную содержимое файла// Совершаем действия над строкой xml
+    let parser=new DOMParser();
+    let xmlDoc = parser.parseFromString(xml, "text/xml");
+    
+    let List = xmlDoc.getElementsByTagName("groupmate"); //Получаем массив всех одногруппников
+        for ( i=0; i < List.length; i++) {
+            document.write("<h1><strong>Студент</strong></h1>")
+            let SName = List[i].getElementsByTagName("lastname")[0].innerHTML;
+            document.write("<strong>Фамилия:</strong> " + SName + "<br/>");
+            let Name = List[i].getElementsByTagName("firstname")[0].innerHTML;
+            document.write("<strong>Имя:</strong> " + Name  + "<br/>");
+            let mName = List[i].getElementsByTagName("middlename")[0].innerHTML;
+            document.write("<strong>Отчество: </strong>" + mName  + "<br/>" );
+            let Passing = List[i].getElementsByTagName("passing")[0].innerHTML;
+            document.write("<strong>Проходной балл: </strong>" + Passing + "<br/>");
+            let birthyear = List[i].getElementsByTagName("birthyear")[0].innerHTML;
+            document.write("\n<strong>Год рождения: </strong>" + birthyear + "<br/>");
+        }       
+    }
+reader.readAsText(file); // Указываем, что данный файл предназначен для чтения текста
+}
+</script>
+</body>
+</html>

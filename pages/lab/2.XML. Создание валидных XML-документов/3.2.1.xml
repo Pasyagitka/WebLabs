@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE poit SYSTEM "Note.dtd">
+<?xml-stylesheet type="text/css" href="3.1.css"?>
+<poit>
+	<university>
+			<name>БГТУ</name>
+			<passing>330</passing>
+			<pages>90</pages>
+			<location>Минск</location>
+</university>
+<university>
+			<name>БГУИР</name>
+			<passing>360</passing>
+			<pages>240</pages>
+			<location>Минск</location>
+</university>
+<university>
+			<name>БНТУ</name>
+			<passing>340</passing>
+			<pages>30</pages>
+			<location>Минск</location>
+</university>
+</poit>

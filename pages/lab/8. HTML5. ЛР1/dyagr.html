@@ -1,0 +1,47 @@
+<html>
+  <head>
+      <title>Круговая диаграмма</title>
+  </head>
+  <style>
+    canvas {
+      margin-left: 30%;
+      border: dashed 2px black;
+    }
+  </style>
+  <body>
+    <canvas id="dyagram" width="500" height="450"></canvas>
+    <script>
+      let canvas = document.getElementById("dyagram");
+      let ctx = canvas.getContext("2d");
+      let percent = [17, 22, 61];
+      let colors = ["MediumSlateBlue", "YellowGreen", "MediumVioletRed"];
+      prevAngle = 0.0;
+      for (let i = 0; i < percent.length; i++) {
+        let angle = prevAngle + percent[i]/100 * Math.PI * 2;
+        ctx.fillStyle = colors[i];
+        ctx.beginPath();
+        ctx.moveTo(180, 250);
+        ctx.arc(180, 250, 100, prevAngle, angle, false);
+        ctx.lineTo(180, 250);
+        ctx.fill();
+        prevAngle = angle;
+      }
+      ctx.font = "15pt Consolas";
+      let height = 200;
+      let study = ["Детский сад", "Университет", "Школа"];
+      for (let i = 0; i < percent.length; i++) {
+        ctx.fillStyle = colors[i];
+        ctx.fillRect(320, height, 10, 10);
+        ctx.fillText(study[i], 350, height + 10);
+        height = height + 30;
+      }
+      ctx.fillStyle = "MediumVioletRed";
+      ctx.font = "bolder 24pt Consolas";
+      ctx.shadowColor = "MediumVioletRed";
+      ctx.shadowOffsetX = 5;
+      ctx.shadowOffsetY = 5;
+      ctx.shadowBlur = 10;
+      ctx.fillText("Учебное заведение", 100, 100);
+    </script>
+  </body>
+</html>

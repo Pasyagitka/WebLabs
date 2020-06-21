@@ -1,0 +1,7 @@
+<!ELEMENT poit (university*)>
+<!ELEMENT university (name, passing, pages, location)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT passing (#PCDATA)>
+<!ELEMENT pages (#PCDATA)>
+<!ELEMENT location (#PCDATA)>
+

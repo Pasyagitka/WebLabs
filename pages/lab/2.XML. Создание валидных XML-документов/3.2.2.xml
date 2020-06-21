@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="3.1.css"?>
+<poit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:SchemaLocation="Note.xsd">
+	<university>
+			<name>БГТУ</name>
+			<passing>330</passing>
+			<pages>90</pages>
+			<location>Минск</location>
+</university>
+<university>
+			<name>БГУИР</name>
+			<passing>360</passing>
+			<pages>240</pages>
+			<location>Минск</location>
+</university>
+<university>
+			<name>БНТУ</name>
+			<passing>340</passing>
+			<pages>30</pages>
+			<location>Минск</location>
+</university>
+</poit>

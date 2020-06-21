@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="3.3.xsl"?>
+<poit4>
+<groupmate>
+	<lastname>Иванов</lastname>
+	<firstname>Иван</firstname>
+            	<middlename>Иванович</middlename>
+	<passing>5</passing>
+            	<birthyear>2000</birthyear>
+</groupmate>
+<groupmate>
+			
+	<lastname>Петров</lastname>
+	<firstname>Пётр</firstname>
+            	<middlename>Петрович</middlename>
+	<passing>7</passing>
+            	<birthyear>2001</birthyear>
+</groupmate>
+<groupmate>
+	<lastname>Романов</lastname>
+	<firstname>Роман</firstname>
+           	<middlename>Романович</middlename>
+	<passing>6</passing>
+            	<birthyear>2001</birthyear>
+</groupmate>
+<groupmate>
+	<lastname>Антонов</lastname>
+	<firstname>Антон</firstname>
+            	<middlename>Антонович</middlename>
+	<passing>8</passing>
+            	<birthyear>2000</birthyear>
+</groupmate>
+<groupmate>
+	<lastname>Сергеев</lastname>
+	<firstname>Сергей</firstname>
+            	<middlename>Сергеевич</middlename>
+	<passing>4</passing>
+            	<birthyear>2001</birthyear>
+</groupmate>
+<groupmate>
+	<lastname>Николаев</lastname>
+	<firstname>Николай</firstname>
+            	<middlename>Николаевич </middlename>
+	<passing>9</passing>
+            	<birthyear>2000</birthyear>
+</groupmate>
+</poit4>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+<style>
+    canvas {
+        display: block;
+        margin: auto;
+    }
+</style>
+
+</head>
+<body>
+    <canvas id='draw' width='560' height='520' style="background:rgb(255, 255, 255); border: 2px dashed; "/>    
+    <script>
+        var canvas = document.getElementById('draw');
+        var ctx=canvas.getContext("2d");
+        if (canvas.getContext) {
+        ctx.strokeStyle='black';
+        ctx.beginPath();  
+        ctx.moveTo(85,40);
+        ctx.lineTo(85,450);
+        ctx.lineTo(450,450);
+        ctx.moveTo(85,40);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.font='15px Verdana';
+        ctx.fillStyle='#60016d';
+        ctx.fillText("Годы", 10, 250);
+        ctx.fillText("Учебное заведение", 210, 510);
+        ctx.fillText("12", 60, 90);
+        ctx.fillText("9", 60, 180);
+        ctx.fillText("6", 60, 270);
+        ctx.fillText("3", 60, 360);
+        ctx.fillStyle='darkcyan';
+        ctx.fillText("Детский сад", 100, 475);
+        ctx.fillStyle='purple';
+        ctx.fillText("Школа", 250, 475);
+        ctx.fillStyle='pink';
+        ctx.fillText("Университет", 350, 475);
+        
+        var grad = ctx.createLinearGradient(60, 240, 61, 480);
+        grad.addColorStop(0.5,'pink');
+        grad.addColorStop(1.0,'purple');
+        ctx.fillStyle=grad;
+        ctx.fillRect(120, 360, 60, 89);
+        var img = new Image();
+        img.src = 'pics.jpg';
+        img.onload = function() {
+        var pattern = ctx.createPattern(img, 'repeat');
+        ctx.fillStyle = pattern;
+        ctx.fillRect(240, 90, 60, 359);
+        };
+        var grad = ctx.createLinearGradient(350, 300, 460, 460);
+        grad.addColorStop(0.5,'lightblue');
+        grad.addColorStop(1.0,'white');
+        ctx.fillStyle=grad;
+        ctx.fillRect(370, 330, 60, 119);
+        }
+    </script>
+</body>
+</html>

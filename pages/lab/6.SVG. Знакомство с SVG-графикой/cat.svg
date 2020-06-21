@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="273.7mm" height="209.536mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 27370 20954"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str1 {stroke:#2B2A29;stroke-width:19.592}
+    .str0 {stroke:#2B2A29;stroke-width:17.2801}
+    .fil2 {fill:none}
+    .fil0 {fill:#2B2A29}
+    .fil1 {fill:#FFED00}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <ellipse class="fil0 str0" cx="13931" cy="12825" rx="10324" ry="6731"/>
+  <ellipse class="fil0 str0" cx="14300" cy="8880" rx="8455" ry="3114"/>
+  <path class="fil0 str0" d="M18612 5612c805,-821 973,-614 1704,-1962 140,-256 2049,-3488 2200,-3297 481,607 -95,3806 646,5669 465,1169 296,4317 810,5038 507,712 -1896,-1022 -1952,-1070 -1330,-1160 -2829,-1199 -3732,-2791 -643,-1134 -357,-892 324,-1587z"/>
+  <path class="fil0 str0" d="M7210 6509c-462,-436 -2715,-4248 -2802,-4846 -22,-149 -382,-998 -471,-967 -52,150 -9,6970 -156,8319 -105,967 -390,2054 -8,2979 516,1250 1,449 1701,-1206 396,-386 2047,-3789 1820,-4172 -29,-50 -29,-56 -84,-107z"/>
+  <ellipse class="fil0 str0" cx="13390" cy="10509" rx="9222" ry="5078"/>
+  <path class="fil1 str1" d="M22125 9715c-153,-72 -307,-174 -472,-117l-97 52 -143 78c-938,38 -1706,147 -2338,309 154,675 -5,3865 -791,3803 80,-1007 -765,-2102 -1031,-2970 -1532,1184 -1246,2950 -2240,3681 3446,0 6650,-837 7112,-4836z"/>
+  <path class="fil1 str1" d="M6135 10162c1234,3950 2716,5598 6764,3989l-319 -628c-415,-818 -1075,-1567 -1835,-2167 -196,399 -552,913 -549,1284 36,3939 -923,-1471 -1069,-2264 -1097,-482 -2204,-614 -2992,-214z"/>
+  <path class="fil2 str0" d="M13965 17239c-628,-1196 -1047,-1204 623,-1269 611,-24 -530,1445 -623,1269z"/>
+ </g>
+</svg>
