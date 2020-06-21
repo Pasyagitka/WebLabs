@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style type="text/css"> 
+  </style>
+</head>
+<body>
+    <img id="flower" src="5.png" style="position:absolute;" onclick="curve()">
+    <script language="JavaScript">
+    function curve() {
+    let e = document.getElementById('flower');
+    let x = 0;
+    let y;
+    let timer = setInterval(function () {
+      x += 0.5 * 100;
+      y = Math.sin(x) * 100;
+      if (x == 550) {
+        clearInterval(timer);
+      }
+      e.style.left = x + 'px';
+      e.style.top = y + 'px';
+    }, 35);
+    e.style.left = 0;
+    e.style.top = 0;
+    }
+</script>
+</body>
+</html>

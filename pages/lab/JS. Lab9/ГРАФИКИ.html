@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>9.Графики</title>
+</head>
+    <body>
+        <div style="width: 600px; height: 550px;  margin:auto; margin-right:auto;">
+            <canvas id="canvas" width="400px" height="500px" style="background:white; border: 2px dashed;"></canvas><br>
+            <input type="radio" name="func" value="x^2" onclick="x2()">   y=x^2
+            <input type="radio" name="func" value="x^3" onclick="x3()">   y=x^3
+            <input type="radio" name="func" value="sin(x)" onclick="sin()"> y=sin(x)
+            <input type="radio" name="func" value="cos(x)" onclick="cos()"> y=cos(x)</br>
+            Выберите цвет графика: <input type="color" id = "color" onchange="color()">
+        </div>
+        <script> 
+            function color() {
+            let color = document.querySelector('#color').value;
+            return color;
+            }  
+
+            function x2(){
+            canvas.width=400;
+            let ctx = canvas.getContext("2d");
+            for( i=-20; i<20; i+=0.01){
+                ctx.fillStyle=color();
+                ctx.fillRect(200+i*10, 250-Math.pow(i,2), 1, 1);           
+            }
+            }
+            function x3(){
+            canvas.width=400;
+            let ctx=canvas.getContext("2d");
+            for(let i=-20;i<20;i+=0.01){
+                ctx.fillStyle=color(); 
+                ctx.fillRect(200+i*10,250-Math.pow(i,3),1,1);
+            }   
+            }
+            function sin(){
+            canvas.width=400;
+                let ctx=canvas.getContext("2d");
+                for(let i=-20;i<20;i+=0.01){
+                    ctx.fillStyle=color(); 
+                    ctx.fillRect(200+i*10,250-Math.sin(i*0.5)*20,1,1);
+                }
+            }
+            function cos(){
+                canvas.width=400;
+                let ctx=canvas.getContext("2d");
+                for(let i=-20;i<20;i+=0.01){
+                    ctx.fillStyle=color(); 
+                    ctx.fillRect(200+i*10,250-Math.cos(i*0.5)*20,1,1);
+                }
+            }  
+        </script>
+    </body>
+</html>

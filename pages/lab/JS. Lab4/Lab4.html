@@ -1,0 +1,141 @@
+<!doctype html>
+ <html>
+  <head>
+   <title>Lab 4</title>
+    <style>
+      body { 
+        white-space: pre-line;  
+      }
+    </style>
+    <script>
+
+    //N - номер, spec - специальность, count - количество
+    document.write("\n<b>Задание 1. Group\n</b>")
+    function Group(N,spec,count) {
+      this.N=N;
+      this.spec=spec;
+      this.count=count;
+    
+      this.add = function add(k) {
+        this.count += k;
+        document.write('В группу № ' + this.N + ' добавили ' + k + ' студента(ов).<br\>');
+      }
+
+      this.del = function del(k) {
+        this.count -= k;
+        document.write('Из группы № ' + this.N + ' исключили ' + k + ' студента(ов).<br\>');
+      }
+    }
+      gr1 = new Group(2, 'ИСиТ', 28);
+      gr2 = new Group(4, 'ПОИТ', 29);
+      gr3 = new Group(12, 'ДЭиВИ', 29);
+      gr4 = new Group(5, 'ПОИТ', 29);
+
+      gr1.add(1);
+      gr2.del(2);
+      gr3.del(3);
+      gr4.del(1);
+
+      document.write("Количество студентов в группе № " + gr1.N + ": " + gr1.count + "\n");
+      document.write("Количество студентов в группе № " + gr2.N + ": " + gr2.count + "\n");
+      document.write("Количество студентов в группе № " + gr3.N + ": " + gr3.count + "\n");
+      document.write("Количество студентов в группе № " + gr4.N + ": " + gr4.count + "\n");
+
+    document.write('\n<b>Задание 2. Student\n</b>')
+    function Student(name, surname, physics, math, CS) {
+      this.name = name;
+      this.surname = surname;
+      this.physics = physics;
+      this.math = math;
+      this.CS = CS;
+      
+      this.namesurname = function namesurname() {
+        alert('Имя и фамилия студента: ' + this.name + this.surname);
+      }
+
+      this.mark = function mark() {
+        s = (this.physics + this.math + this.CS)/3;
+        document.write('Средний балл студента ' + this.name + this.surname + ' равен ' + s.toPrecision(3) + '\n');
+      }
+    }
+        st1 = new Student(' Robert', ' Thompson ', 8, 6, 9);
+        st2 = new Student(' Westin', ' Moore ', 7, 8, 4);
+        st3 = new Student(' Alan', ' Jones ', 6, 8, 7);
+
+        Student.prototype.group = this.group;
+        st1.group = 2;
+        st2.group = 6;
+        st3.group = 3;
+
+        document.write('<h3>Полная информация о студентах</h3>')
+        document.write('<b>Студент 1.</b>\nИмя: ' + st1.name + '\nФамилия: ' + st1.surname + '\nГруппа: ' + st1.group + '\nОтметка по физике: ' + 
+        st1.physics+ '\nОтметка по математике: ' +  st1.math + '\nОтметка по информатике: ' + st1.CS + '\n');
+        st1.namesurname();
+        st1.mark();
+        document.write('<b>\nСтудент 2.</b>\nИмя: ' + st2.name + '\nФамилия: ' + st2.surname + '\nГруппа: ' + st2.group + '\nОтметка по физике: ' + 
+        st2.physics+ '\nОтметка по математике: ' +  st2.math + '\nОтметка по информатике: ' + st2.CS + '\n');
+        st2.namesurname();
+        st2.mark();
+        document.write('<b>\nСтудент 3.</b>\nИмя: ' + st3.name + '\nФамилия: ' + st3.surname  + '\nГруппа: ' + st3.group + '\nОтметка по физике: ' + 
+        st3.physics+ '\nОтметка по математике: ' +  st3.math + '\nОтметка по информатике: ' + st3.CS + '\n');
+        st3.namesurname();
+        st3.mark();
+
+    document.write('\n<b>Задание 3.\n</b>');     
+      
+      Arr = [' pow', ' pop', ' push', ' shift', ' round', ' floor', ' sline', ' sort'];
+      document.write('\nИсходный массив: ' + Arr);   
+      document.write('\nDelete:');
+      delete Arr[3];
+      document.write('\nМассив с удалённым 3-им элементом: ' + Arr);
+
+      document.write('\nIn:'); 
+      document.write('\nИмеется ли в массиве второй элемент? ' + (2 in Arr)); 
+      document.write('\nСодержится ли в объекте Group свойство "N"? ' + ('N' in Group)); 
+      document.write('\nСодержится ли в объекте Студент свойство "math"? ' + (' math' in Student));
+  
+      document.write('\nInstanceof:'); 
+      document.write('\nОбъект Group: ')
+      if (Group instanceof Array) 
+           document.write('\nявляется объектом Array');
+           else document.write('\nне является объектом Array');
+      if (Group instanceof String)
+           document.write('\nявляется объектом String');
+           else document.write('\nне является объектом String');
+      if (Group instanceof Object)
+           document.write('\nявляется объектом Object');
+           else document.write('\nне является объектом Object');
+
+      document.write('\nОбъект Student: ')
+      if (Student instanceof Array) 
+          document.write('\nявляется объектом Array');
+           else document.write('\nне является объектом Array');
+      if (Student instanceof String)
+           document.write('\nявляется объектом String');
+           else document.write('\nне является объектом String');
+      if (Student instanceof Object)
+           document.write('\nявляется объектом Object');
+           else document.write('\nне является объектом Object');
+
+      document.write('\nФункция, возвращающая значение 5: ');
+      function f5() {
+        return 5;
+      }
+      document.write(f5());
+      document.write('\nОпределить типы: \n');
+      document.write('typeof (f5) - ' + typeof (f5) + '\n'); 
+      document.write('typeof (Group) - ' + typeof (Group) + '\n');
+      document.write('typeof (Student) - ' + typeof (Student) + '\n'); 
+      document.write('typeof (gr1.N) - ' + typeof (gr1.N) + '\n'); 
+      document.write('typeof (gr1.spec) - ' + typeof (gr1.spec) + '\n'); 
+      document.write('typeof (gr1.count) - ' + typeof (gr1.count) + '\n'); 
+      document.write('typeof (st1.name) - ' + typeof (st1.name) + '\n'); 
+      document.write('typeof (st1.surname) - ' + typeof (st1.surname) + '\n');
+      document.write('typeof (st1.physics) - ' + typeof (st1.physics) + '\n');
+      document.write('typeof (st1.math) - ' + typeof (st1.math) + '\n');
+      document.write('typeof (st1.CS) - ' + typeof (st1.CS) + '\n');    
+    </script>
+     </head>
+     <body>
+  </body>
+</html>

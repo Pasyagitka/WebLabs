@@ -1,0 +1,18 @@
+.menu-item{
+border: 3px soild rgb(210, 238, 229);
+display: inline-block;
+position: relative;
+cursor: pointer;
+}
+.menu-item .submenu{
+height: 40px;
+width: 70;
+
+background: -moz-linear-gradient(45deg,  #c146a1 42%, #db36a4 78%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #c146a1 42%,#db36a4 78%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #c146a1 42%,#db36a4 78%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c146a1', endColorstr='#db36a4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+;
+position: absolute;
+cursor: pointer;
+}

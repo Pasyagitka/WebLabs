@@ -1,0 +1,69 @@
+<!doctype html>
+ <html>
+  <head>
+    <title>Lab7</title>
+    <style>
+      body { 
+        white-space: pre-line;  
+      }
+    </style>
+    <script> 
+      function mas(){
+      Arr = [];
+      if(document.forms["data"].subj1.checked) Arr.push(document.forms[0].elements[9].value);      
+      if(document.forms["data"].subj2.checked) Arr.push(document.forms[0].elements[10].value);
+      if(document.forms["data"].subj3.checked) Arr.push(document.forms[0].elements[11].value);
+      if(document.forms["data"].subj4.checked) Arr.push(document.forms[0].elements[12].value);
+      if(document.forms["data"].subj5.checked) Arr.push(document.forms[0].elements[13].value);  
+      return Arr;
+      }
+      function text() {
+      mas();
+      document.write('<h1 align="center">'+ document.forms[0].elements[1].value + '</h1>' + 'Студент ' + document.forms["data"].lastname.value + ' специальность ' + document.forms[0].elements[4].value
+      + ' курс ' + document.forms["data"].kurs.value + ' должен сдавать следующие предметы: ' );
+      document.write("<ul>")
+      for (i = 0; i < Arr.length; i++ )
+        document.write("<li>" + Arr[i] + "</li>");  
+      document.write("</ul>")  
+      }
+    </script>
+     </head>
+     <body>
+      <form name = data>
+      <fieldset><textarea>Факультет информационных технологий</textarea> <br />  
+        <input type='text' value="Фамилия" name='lastname' />
+        <input type='text' value="Имя" name='firstname' /><br />
+      <b>Специальность</b><select name='cpec'>
+        <option name='cpec'>ПОИТ</option>
+        <option name='cpec'>ИСиТ</option>
+        <option name='cpec'>ПОиБМС</option>
+        <option name='cpec'>ДЭиВИ</option>
+      </select>
+      <b>Курс</b>   
+        <input type='radio' name='kurs' value='1'/> 1    <input type='radio' name='kurs' value='2'/> 2        <input type='radio' name='kurs' value='3'/> 3        <input type='radio' name='kurs' value='4'/> 4
+      <b>Предметы</b>   
+      <input type='checkbox' name='subj1' value='ОИТ'/> ОИТ        <input type='checkbox' name='subj2' value='ОАиП'/> ОАиП        <input type='checkbox' name='subj3' value='История'/> История        <input type='checkbox' name='subj4' value='Физика'/> Физика        <input type='checkbox' name='subj5' value='Математика'/> Математика
+      
+      <input type='submit'  value='submit'/>      <input type='reset' value='reset'/>
+
+      <input type='button'  value='Напечатать' onclick='text()' />
+      </fieldset>      
+      </form>
+      <div style="background-image: url(124.jpg); width: 45%; margin: 0 auto">
+        <form name = profile>
+          <fieldset style="background-color: pink ; margin: 0 auto; width: 30%; height: 40%"><legend><b>Анкета друзей</b></legend><input type='text' value="Фамилия" name='lastname'>
+            <input type='text' value="Имя" name='firstname'>
+           <b>День рождения:</b>
+           <input type='text' value=" " style="width: 20px;"><select>
+           <option>Января</option><option>Февраля</option><option>Марта</option><option>Апреля</option><option>Мая</option><option>Июня</option><option>Июля</option><option>Августа</option><option>Сентября</option><option>Октября</option><option>Ноября</option><option>Декабря</option>
+          </select><input type='text' value="Года" style="width: 30px;">
+          <b>Любимая еда</b>   
+            <input type='radio'> Пицца    <input type='radio'> Мороженое       <input type='radio'> Конфеты        <input type='radio'  value='4'/> Фастфуд 
+          <b>Качества</b>   
+          <input type='checkbox'> Добрая <input type='checkbox'>  Весёлая <input type='checkbox'> Красивая <input type='checkbox'> Умная
+          О себе:<textarea></textarea><br>
+        </fieldset>      
+        </form>
+        </div>
+  </body>
+</html>

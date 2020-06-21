@@ -1,0 +1,74 @@
+<!doctype html>
+ <html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="../css/vid1.css">
+    <title>Lab 3</title>
+    <style>
+        body {
+            white-space: pre-line; 
+        }
+    </style>
+    <script>
+    
+    document.write("<b>Задание 1.</b>");
+    M = new Array();
+    M[0] = 6*Math.pow(Math.PI, 2)+3*Math.exp(8);             
+    M[1] = 2*Math.cos(4)+Math.cos(12)+8*Math.exp(3);
+    M[2] = 2*Math.sin(9)+Math.log(5)+Math.sqrt(3);
+    M[3] = 2*Math.tan(5)+6*Math.PI+Math.sqrt(12); 
+    document.write("\nМассив:\n");
+    document.write(M[0] + "\n");
+    document.write(M[1] + "\n");
+    document.write(M[2] + "\n");
+    document.write(M[3] + "\n");
+    min = M[0]; imax = 0; 
+    max = min;  imin = 0;
+    for (i = 1; i < 4; i++) {
+        if (M[i] > max) {max = M[i]; imax = i;}
+        if (M[i] < min) {min = M[i]; imin = i;}
+    }
+    document.write("Максимальный элемент массива: " + max + ". Его порядковый номер: " + (imax+1));
+    document.write("\nМинимальный элемент массива: " + min + ". Его порядковый номер: " + (imin+1) + "\n");
+
+
+    document.write("<b>\nЗадание 2.</b>");
+    Arr = new Array(" pow", " pop", " push", " shift", " round", " floor", " sline", " sort");
+
+    AArray = (Arr.slice(1, 4)).concat(Arr.slice(7)).concat(" concat"); //1 2 3 7        //concat в конец
+    temp = new Array (" random");
+    AMath = temp.concat(Arr.slice(0, 1)).concat(Arr.slice(4, 7));  //0 4 5 6    //добавили random в начало
+    document.write("\nИсходный массив: "+ Arr);
+    document.write("\nМассив методов объекта Array: " + AArray); document.write(".\nЕго длина: "+ AArray.length);
+    document.write("\nМассив методов объекта Math: " + AMath); document.write(".\nЕго длина: "+ AMath.length + "\n");
+    
+
+    document.write("<b>\nЗадание 3.</b>");
+    mystring = "Зинович Елизавета Игоревна";
+    document.write("\nИсходная строка: " + mystring + "\n");
+    document.write("Её длина: "+ mystring.length);
+    Upper = mystring.toUpperCase();
+    Lower = mystring.toLowerCase();
+    document.write("\nВерхний регистр: " + Upper + "\n");
+    document.write("Нижний регистр: " + Lower + "\n");
+    document.write("Соединить: " + Upper.concat(Lower) + "\n");
+    document.write("Заменить на ФИО: " /*+ mystring.replace("Зинович Елизавета Игоревна", "ЗЕИ"*/);
+    x = (mystring.substring(0, 1)) + (mystring.substring(8, 9)) + (mystring.substring(18, 19));
+    document.write(x);
+
+
+    document.write("<b>\nЗадание 4.</b>");
+    x = new Date();
+    document.write("<table>"); 
+    document.write("<tr><td>Год</td>");       document.write("<td>" + x.getFullYear() + "</td></tr>"); 
+    document.write("<tr><td>Месяц</td>");     document.write("<td>" + (x.getMonth() + 1) + "</td></tr>");
+    document.write("<tr><td>День</td>");      document.write("<td>" + x.getDate() + "</td></tr>");
+    document.write("<tr><td>Час</td>");       document.write("<td>" + x.getHours() + "</td></tr>"); 
+    document.write("<tr><td>Минуты</td>");    document.write("<td>" + x.getMinutes() + "</td></tr>"); 
+    document.write("<tr><td>Секунды</td>");   document.write("<td>" + x.getSeconds() + "</td></tr>");
+    document.write("</table>"); 
+    </script>
+    </head>
+    <body>
+    </body>
+ </html>

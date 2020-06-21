@@ -1,0 +1,118 @@
+<!doctype html>
+ <html>
+  <head>
+   <title>Lab9</title>
+	<link rel="stylesheet" href="../css/vid8.css">
+	<style>
+	#ex2 {
+		position: relative;
+	}
+	</style>	
+ </head>
+ <body>
+	<h2>My second page</h2>	
+	<a href="page1.html"><img src="../images/flower.png" width = 100%></a>
+	<h3 style="text-align:center">Paragraph №1</h3>
+	<div class="paragraph1">		
+		<b>Rose oil</b> is an important ingredient in the perfume industry. Extraction of minimal amount of this oil requires huge amount of roses (one gram of oil 
+		is produced from two thousand roses). The nice scent of the rose comes from microscopic perfume glands on the petals.
+	</div>
+	<textarea id="text">Paragraph №2</textarea>
+	<div class="paragraph2">
+		<b>Flowers provide an eye-catching attribute</b> to an otherwise plain, green-leaved plant. When insects, birds and some bats dip down to take a look at the
+		flower and steal its nectar, they are inadvertently pollinating the plants by moving pollen from the male stamens to the female pistils. Flower is what (following
+		pollination) produces the fruit. It is also where the seed is produced so that more of the same plant will grow in the future. 
+	</div>
+	<div class='flowers'>
+			<img src="4.png" id = "flower" width = 10%>
+			<img id = "img1" src="цветочек.png"  width = 15% >	
+			<img src="2.png" id="ex2" width = 15%></br>
+			<img src="3.png" width = 12% >			
+	</div>
+    
+    <script>	
+		//1. Картинка
+		let flower = document.getElementById('flower');
+		flower.onmousedown = function(e) {
+		let coords = getCoords(flower);
+		let shiftX = e.pageX - coords.left;
+		let shiftY = e.pageY - coords.top;
+		flower.style.position = 'absolute';
+		document.body.appendChild(flower);
+		moveAt(e);
+		flower.style.zIndex = 1000; // над другими элементами
+		function moveAt(e) {
+			flower.style.left = e.pageX - shiftX + 'px';
+			flower.style.top = e.pageY - shiftY + 'px';
+		}
+		document.onmousemove = function(e) {
+			moveAt(e);
+		};
+		flower.onmouseup = function() {
+			document.onmousemove = null;
+			flower.onmouseup = null;
+		};
+		}
+		flower.ondragstart = function() {
+		return false;
+		};
+		function getCoords(elem) {   // кроме IE8-
+		let box = elem.getBoundingClientRect();
+		return {
+			top: box.top + pageYOffset,
+			left: box.left + pageXOffset
+		};
+		}
+		//Область текста
+		let text = document.getElementById('text');
+		text.onmousedown = function(k) {
+		let coords = getCoords(text);
+		let shiftX = k.pageX - coords.left;
+		let shiftY = k.pageY - coords.top;
+		text.style.position = 'absolute';
+		document.body.appendChild(text);
+		moveAt(k);
+		text.style.zIndex = 1000; // над другими элементами
+		function moveAt(k) {
+			text.style.left = k.pageX - shiftX + 'px';
+			text.style.top = k.pageY - shiftY + 'px';
+		}
+		document.onmousemove = function(k) {
+			moveAt(k);
+		};
+		text.onmouseup = function() {
+			document.onmousemove = null;
+			text.onmouseup = null;
+		};
+		}
+		text.ondragstart = function() {
+		return false;
+		};
+		function getCoords(elem) {   // кроме IE8-
+		let box = elem.getBoundingClientRect();
+		return {
+			top: box.top + pageYOffset,
+			left: box.left + pageXOffset
+		};
+		}
+		//Задание 2. Создать программу на JS, организующую движение картинки по прямой линии. 
+		ex2.onclick= function()
+		{
+			let start = Date.now(); 
+			let timer = setInterval(function() {
+			let timePassed = Date.now() - start;
+			if (timePassed >= 1500) {
+				clearInterval(timer);
+				return;
+			}
+			draw(timePassed);
+			}, 20);
+
+			function draw(timePassed) {
+			ex2.style.left = timePassed / 5 + 'px';
+		}
+	}
+  
+    </script>
+ </body>
+</html>
