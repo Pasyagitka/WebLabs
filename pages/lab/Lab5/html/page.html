@@ -1,0 +1,105 @@
+<!doctype html>
+ <html>
+  <head>
+   <title>Моя вторая страница</title>
+	<link rel="stylesheet" href="../css/vid.css">
+  <style>
+    @font-face {
+		font-family: font ;
+		src: url('../font/adine_kirnberg.ttf');
+	}
+	body {
+	background-image: url(../images/fon1.jpg), url(../images/fon2.jpg);
+	background-size: 100% 100%;	
+	font-family: "font";
+	text-shadow: 1px 1px 1px rgb(238, 238, 238), 1px 1px 6px rgb(180, 103, 216);
+	text-overflow: ellipsis;
+	}
+   .paragraph1 {
+	color: hsla(290, 50%, 25%, 0.87);
+	border: 30px solid transparent;
+	border-image: url(../images/../images/ramka.png) 110 100 round round;
+   }
+   .paragraph2 {
+	color: rgba(62, 20, 78, 0.897);
+	border: 30px solid transparent;
+	border-radius: 15%;
+	box-shadow: 0 0 10px rgb(180, 150, 194);
+   }
+   .img1:hover{
+	transform: rotate(30deg);
+   }
+   .img2:hover{
+	transform: skew(45deg);
+   }
+   .img3:hover{
+	transform: scale(10, 10);
+   }
+   .img4:hover{
+   transform: translate(10px, 20px);
+   }
+   .z3_1{
+	  width: 100%;
+	  height: 50px;
+	  background: radial-gradient(hsla(300, 69%, 38%, 0.438), hsla(235, 37%, 42%, 0.493));
+   }
+   .z3_2{
+	  width: 100%;
+	  height: 50px;
+	  background: linear-gradient(rgba(226, 23, 216, 0.357), rgba(145, 152, 229, 0.521));
+   }
+   /*эффекты перехода*/
+  	div.z3_1:hover {
+	width: 300px;
+	}
+	div.z3_1{
+	width: 10%, 100%;
+	transition-property: width;
+	transition-duration: 5s;
+	transition-timing-function: linear;
+	}
+	div.z3_2:active {	
+	width: 100%;
+    height: 50px;
+    transform: rotate(180deg);
+	}
+	div.z3_2 {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(202, 76, 145, 0.582);
+    -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+	transition: width 2s, height 2s, background-color 2s, transform 0.5s;
+	}
+
+  </style>
+  
+ </head>
+	<h2>My second page</h2>
+	<a href="page1.html"><img src="../images/flower.png" title="Перейти на первую страницу" width = 100%/></a>
+
+	<h3 style="text-align:right">Paragraph №1</h3>
+	<div class="paragraph1">
+		
+		<b>Rose oil</b> is an important ingredient in the perfume industry. Extraction of minimal amount of this oil requires huge amount of roses (one gram of oil 
+		is produced from two thousand roses). The nice scent of the rose comes from microscopic perfume glands on the petals.
+	</div>
+	<h3 style="text-align:center">Paragraph №2</h3>
+	<div class="paragraph2">
+		<b>Flowers provide an eye-catching attribute</b> to an otherwise plain, green-leaved plant. When insects, birds and some bats dip down to take a look at the
+		flower and steal its nectar, they are inadvertently pollinating the plants by moving pollen from the male stamens to the female pistils. Flower is what (following
+		pollination) produces the fruit. It is also where the seed is produced so that more of the same plant will grow in the future. 
+	</div>
+	<div class='flowers'>
+			<img src="../images/4.png"  width = 10% class="img1">
+			<img src="../images/3.png"  width = 10% class="img2">
+			<img src="../images/цветочек.png"  width = 15% class="img3">	
+			<img src="../images/2.png"  width = 15% class="img4">
+		</div>
+
+		<div class=z3_1></div>
+		<br>
+		<div class=z3_2></div>
+	<footer style="text-align: center"><span>&#169Zinovich Elizaveta Igorevna</span>
+	</footer>
+ </body>
+</html>

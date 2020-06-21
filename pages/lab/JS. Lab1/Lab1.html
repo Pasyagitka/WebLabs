@@ -1,0 +1,125 @@
+<!doctype html>
+ <html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="../css/vid.css">
+    <title>Lab 1</title>
+    <style>
+      body { 
+        background-image: url(fon2.jpg);
+        white-space: pre-line; 
+      }
+      </style>
+    <script>
+
+    //Задание 1
+    function ex1()  {
+      alert('Вас приветствует учебный центр');
+      x=prompt('Введите имя:', 'Имя');
+      alert('Добро пожаловать на наши курсы, '+  x);
+      if (confirm('Хотите стать Web-дизайнером?')) {
+          alert('Учите стили CSS и JavaScript!');
+      }   else {
+      alert('Упускаете время!');
+      }
+    }
+    //Задание 2
+    function ex2() {
+      document.write('<span style="color: green; font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 200%; font-style: italic;">Задание 2:');  
+      x = 10; y = 5;
+      document.write(x+y,'\t');    
+      x = ("10"); y = ("5");
+      document.write(x+y,'\t');
+      x = ("22"); y = 5;
+      document.write(x+y,'\t');
+      x = 22; y = ("5");
+      document.write(x+y,'\n</span>');
+      alert('Результатом сложения строки и числа всегда будет строка.');
+    }
+    //Задание 3
+    function ex3() {
+      document.write('<span style="color: purple; font-family: Georgia, `Times New Roman`, Times, serif; font-size: 150%; font-style: italic;">Задание 3:'); 
+      x=0.1; y=-150;
+      result1 = (7*y-5*x)/5-0.3245;
+      result2 = (8*y/x-10*x/y - 100)*2;
+      mod = result2%result1;  
+        document.write(result1, '\t');   
+        document.write(result2, '\t' );    
+        document.write(mod, '\t</span>' );  
+      alert('Результат первого выражения: ' + result1 + 
+            '\nРезультат второго выражения: ' + result2 + 
+            '\nОстаток от деления первого на второе: ' + mod);
+    }
+
+    //Задание 4
+    function ex4_1() {
+      x = prompt('Введите любое число:', 'Число');
+      if ((x < 20 || x > 40) && (x != 15) && (x % 5 == 0))
+      document.write('<span style="color: green; font-style: italic;">Правильное значение</span>');
+      else document.write('<span style="color: red; font-style: italic;">Неправильное значение</span>');
+    }
+    function ex4_2() {
+      x = prompt('Введите любое число:', 'Число');
+      if ((x >= 0) && (x <= 100) && (x!= 15) && (x !=56))
+      document.write('<span style="color: green; font-style: italic;">Правильное значение</span>');
+      else document.write('<span style="color: red; font-style: italic;">Неправильное значение</span>');
+    }
+
+    //Задание 5
+    function ex5_1() {
+      A = +prompt('Введите первое число:', 'первое');
+      B = +prompt('Введите второе число:', 'второе');
+        if (A > B) document.write('Первое число больше второго: ' + A  + ' > ' + B);
+        else if (A == B)  document.write('Числа равны: ' + A  + ' = ' + B);
+        else if (A < B)  document.write('Первое число меньше второго: ' + A  + ' < ' + B);
+    }
+    function ex5_2() {
+      year = +prompt('Какой сейчас год?', '-');
+       (year == 2020) ?  document.write('<span style="color: green; font-size: 350%; font-style: italic;">Верно</span>') :
+       document.write('<span style="color: red; font-size: 350%; font-style: italic;">Не верно</span>');
+    }
+
+    //Задание 6
+    function ex6()  {
+      x = new Date();
+      date = x.getDay()
+      switch (date)
+      { 
+        case 1: document.write('<span style="color: red;">Понедельник</span>'); break;
+        case 2: document.write('<span style="color: orange;">Вторник</span>'); break;
+        case 3: document.write('<span style="color: yellow;">Среда</span>'); break;
+        case 4: document.write('<span style="color: green;">Четверг</span>'); break;
+        case 5: document.write('<span style="color: lightblue;">Пятница</span>'); break;
+        case 6: document.write('<span style="color: blue;">Суббота</span>'); break;
+        case 0: document.write('<span style="color: purple;">Воскресенье</span>'); break;
+      } 
+    }
+
+    //Задание 7
+    function ex7()  {  
+      underr = new Error ('Переменная не определена!');
+      try {
+        alert('То, что введено до ошибки, сработает');
+        variable;
+        alert('То, что введено после, не сработает');  
+      } catch(error) {
+        alert('Ошибка: ' + underr.message); 
+      }
+    }
+    </script>
+  </head>
+  <body>    
+    <div style="background-color: rgba(0, 0, 0, 0.582); margin-left: auto; margin-right: auto;  width: 80%; height: 90%;">
+      <h2>Лабораторная работа №1</h2>
+      <input type='button' value='Задание 1: ' onclick='ex1()' /> <br>
+      <input type='button' value='Задание 2: ' onclick='ex2()' /> <br>
+      <input type='button' value='Задание 3: ' onclick='ex3()' /> <br>
+      <input type='button' value='Задание 4: ' onclick='ex4_1()' /> <br>
+      <input type='button' value='Задание 4 (свой пример): ' onclick='ex4_2()' /><br>
+      <input type='button' value='Задание 5: ' onclick='ex5_1()' /><br>
+      <input type='button' value='Задание 5 (свой пример): ' onclick='ex5_2()' /><br>
+      <input type='button' value='Задание 6: ' onclick='ex6()' /><br>
+      <input type='button' value='Задание 7: ' onclick='ex7()' /><br>
+    </div>
+  </body>
+</html>

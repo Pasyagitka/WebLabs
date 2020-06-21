@@ -1,0 +1,84 @@
+<!doctype html>
+ <html>
+  <head>  
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="vid2.css">
+    <title>Lab 2</title>
+    <style>
+      body { 
+        background-color: Thistle;
+        white-space: pre-line; 
+      }
+    </style>
+    <script>
+
+    // Вывести таблицу умножения, а и b ввести с клавиатуры. Использовать оператор цикла for.   
+    document.write("<b>\nЗадание 1. Таблица умножения</b>");
+      a = +prompt(" Таблица умножения. Введите первое число:", "1");
+      b = +prompt(" Таблица умножения. Введите второе число:", "5");    
+      document.write("<table>")    
+      document.write("</tr>"); 
+      for (i = 1; i <=a; i++) { 
+          for (j = 1; j <= b; j++) { 
+          document.write("<td style='border: 2px solid Thistle; width: 10em; background-color: #bd9ac2f8;  text-align:center'>" + (i*j) + " </td>");
+          } 
+      document.write("</tr>"); 
+      } 
+      document.write("</table>") 
+    
+
+    //Найти площадь круга и длину окружности, радиус меняется от а до b с шагом 0,3. Результаты округлить и вывести в таблице.
+    //Использовать оператор цикла do-while.
+    document.write("<b>\nЗадание 2. Площадь круга и длина окружности</b>");
+      a = +prompt("Площадь круга и длина окружности. Введите первое число:", "0");
+      b = +prompt("Площадь круга и длина окружности. Введите второе число:", "6");
+        
+      document.write("<table>")   
+      document.write("<tr><td bgcolor='white'>Радиус</td><td bgcolor='white'>Площадь круга</td><td bgcolor='white'>Длина окружности</td></tr>"); 
+      i=a; 
+      do{   
+          document.write("<tr>");  
+          document.write("<td>" + i.toFixed(1) + " </td>");
+          document.write("<td>" + Math.round(Math.PI*i*i) + " </td>");
+          document.write("<td>" + Math.round(2*Math.PI*i) + " </td>");
+          document.write("</tr>");
+          i=i+0.3;  
+      }
+      while (i <= b)
+      document.write('</table>'); 
+    
+
+    //Создать 2 объекта-числа (Number) – дробное и целое.
+    //Применить к каждому из них методы: toExponential, toFixed, toPrecision, toString. 
+    document.write("<b>\nЗадание 3. Числа</b>");
+      a = new Number('14'); b = new Number('167.68');
+      document.write("<table>")   
+      document.write("<tr><td bgcolor='white'>Число</td><td bgcolor='white'>Метод</td><td bgcolor='white'>Результат</td><td bgcolor='white'>Описание метода</td></tr>"); 
+      i = a; k = 1; 
+      while (k <= 2)  {
+        k++;
+          document.write('<tr><td rowspan="4">' + i + ' </td>');
+          document.write("<td>toString(16)</td>");
+          document.write("<td>" + i.toString(16) + " </td>");
+          document.write("<td>Строковое представление числа в 16-ричной  системе счисления</td></tr>");
+        
+          document.write("<td>toExponential(3)</td>");
+          document.write("<td>" + i.toExponential(3) + " </td>");
+          document.write("<td>Экспоненциальное представление числа </td></tr>");    
+         
+          document.write("<td>toFixed(3)</td>");
+          document.write("<td>" + i.toFixed(3) + " </td>");
+          document.write("<td>С фиксированной точкой</td></tr>");
+         
+          document.write("<td>toPrecision(3)</td>");
+          document.write("<td>" + i.toPrecision(3) + " </td>");
+          document.write("<td>Представление с заданным общим количеством значащих цифр</td></tr>");
+        i=b;
+      }
+      document.write("</table>"); 
+    
+      </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MAKET_FLEX</title>
+    <style>
+    html, body {
+    height: 100%;
+    }   
+    html {
+    font-family: sans-serif;
+    }
+    body {
+    margin: 0;
+    }
+    header, footer {
+    background:  rgb(174, 217, 231);
+    }
+    h1 {
+    text-align: center;
+    color: white;
+    margin: 0;
+    }
+    article {
+    padding: 5px;
+    background: rgb(255, 255, 255);
+    }    
+    section {
+    display: flex;
+    min-height: 90%;
+    flex-flow: row nowrap;
+    }
+    @media (min-width: 500px) { 
+    .ar1{
+    background:rgb(240, 231, 141);
+    width: 150px;
+    float: left;
+    }
+    .forback{
+    background-image: url(output.png); 
+    background-repeat: repeat-y;
+    background-position: right;}
+
+    }
+    @media (max-width: 500px) {    
+    section {
+    display: flex;
+    min-height: 90%;    
+    flex-flow: column-reverse;
+    }
+    li {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    }
+    footer, header  {
+    display: none;
+    } 
+    .ar1{
+    width: 100%;
+    float: left;
+    }
+    }
+    .football {
+    float: left;
+    margin:  7px 7px 7px 0;
+    }
+    footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    }      
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Привет участникам соревнований!</h1>
+    </header>
+
+    <section>
+      <article class="ar1">
+        <h3>Виды спорта:</h3>
+        <ul>
+        <li><a href="output.png">конькобежный спорт</a></li>
+        <li><a href="output.png">биатлон</a></li>
+        <li><a href="output.png">футбол </a></li>
+        <li><a href="output.png">стрельба из лука</a></li>
+        <li><a href="output.png">прыжки в длину</a></li>
+        <li><a href="output.png">прыжки в высоту</a></li>
+        <li><a href="output.png">фигурное катание</a></li>
+        </ul>   
+      </article>
+      <article class ="forback">
+        <h2 style="text-align: center;">Футбол</h2>
+        <p><img src="http://www.professionecalcio.net/wp-content/uploads/sport_focus_imagedc93114c8239b9d0d72e714308fe02fa.jpg" height = "150px" class="football">
+        Футбол - командный вид спорта, в котором целью является забить мяч в ворота соперника ногами или другими частями тела (кроме рук) большее количество раз, чем команда соперника.</br>
+        </br>Есть 17 официальных правил игры, каждое из которых содержит список оговорок и руководящих принципов.</p>
+      </article>
+    </section>
+    <footer>
+        <h1>Главное не победа, а участие!</h1>
+    </footer> 
+  </body>
+</html>

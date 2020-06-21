@@ -1,0 +1,26 @@
+<html>
+    <head>
+    <title>Бабочка</title>
+    <style>
+        body{
+        background-image: url(ромашка.jpg);
+        background-size: 100% auto;
+        }
+        @keyframes fly {
+            0% {transform: rotate(180deg) translateX(150px) rotate (180deg);  height:100px; width:100px;}
+            50% {transform: rotate(360deg) translateX(150px) rotate (360deg);  height:150px; width:150px;}
+            100% {transform: rotate(540deg) translateX(150px) rotate(540deg); height:250px; width:100px;}
+        }
+        .fly {
+        margin-left: 490px;
+        margin-top: 250px;
+        animation: fly 10s infinite;
+        }
+    </style>
+    </head>
+        <body>
+        <div class="fly">
+            <img src="btrfl.png" height="140px">
+        </div>
+        </body>
+</html>

@@ -1,0 +1,43 @@
+h2, h3, span{
+    text-align: center;
+    font-family: "brush script mt";
+    font-size: 150%;
+}
+h2{
+    font-size: 200%;
+}
+body {
+	background-image: url(../images/fon1.jpg), url(../images/fon2.jpg);
+	background-size: 100% 100%;
+	background-position: right, top;
+    text-align: justify;	
+    
+	}
+   .paragraph1 {
+  	word-spacing: 2px; 
+	letter-spacing: 3px;
+    font-size: 18px;
+	font-style: oblique;
+    font-weight: bolder;
+    width: 50%;
+    padding: 7px;
+    margin-left: auto;
+    font-size: 200%;
+   }
+   .paragraph2 {
+  	word-spacing: 1px; 
+	letter-spacing: 2px;
+    font-size: 18px;
+	font-style: italic;
+    font-weight: normal;
+    width: 80%;
+    padding: 5px;
+    margin: auto;
+    font-size: 200%;
+    background-color: rgba(225, 196, 255, 0.192);
+   }
+   .flowers{
+       margin-left: 40%;
+       margin-right: 40%;
+       width:80%;
+   }

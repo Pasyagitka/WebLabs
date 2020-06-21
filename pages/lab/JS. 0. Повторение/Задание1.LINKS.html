@@ -1,0 +1,99 @@
+<!doctype html>
+ <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro|Playfair+Display+SC&display=swap" rel="stylesheet"> 
+   <title>LINKS</title>
+   <style>  
+        body {
+        margin: auto;
+        text-align: center;
+        padding: 0;   
+        font-family: 'Playfair Display SC', serif;
+        font-family: 'Anonymous Pro', monospace;
+        }
+        div.way1 {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        margin: auto;
+        font-size: 1.5vw;
+        }
+        div.way2 {
+        width: 95%;
+        padding: 5px;
+        margin: auto;
+        background-color: #FDF4E3;
+        font-size: 1.5vw;
+        }
+        ul {
+        list-style: none; 
+        margin: auto; 
+        padding-left: 0; 
+        line-height: 50px;       
+        }
+        a {
+        text-decoration: none; 
+        background:#FDF4E3;
+        height: 40px; 
+        }
+        a:link {
+        color:#808080;
+        }
+        a:hover{
+        color:#EC2D01;
+        }       
+        li {       
+        float: left; 
+        width: 19%; 
+        border-right: 3px solid #EC2D01;
+        }  
+        table {
+        background-color: #FDF4E3;
+        border-collapse: collapse;
+        width: 100%;
+        line-height: 50px; 
+        }
+        td {
+        width: 15%;
+        }
+        td.separate {
+        width: 0.1%;
+        background: #EC2D01; 
+        }
+        a {
+        text-decoration: none;        
+        display: block; 
+        height: 50px; 
+        }   
+        div.way1  ul  li:last-child {
+        border-right:none;
+        }
+        div.way2  table  tr td:last-child {
+        border-right:none;
+        }
+   </style>
+  </head>
+  <body> 
+    <div class="way1">
+      <!--список в одну строку, разделитель как граница справа у всех кроме последнего -->
+        <ul>
+        <li><a href="file:///C:/Desktop/pics.jpg">первая ссылка</a></li>
+        <li><a href="file:///C:/Desktop/pics.jpg">вторая ссылка</a></li>
+        <li><a href="file:///C:/Desktop/pics.jpg">третья ссылка</a></li>
+        <li><a href="file:///C:/Desktop/pics.jpg">четвёртая ссылка</a></li>
+        <li><a href="file:///C:/Desktop/pics.jpg">пятая ссылка</a></li>
+        </ul>
+  </div>
+  <div class="way2">
+    <!--меню как таблица, разделитель как ячейка -->
+    <table>
+        <tr>
+            <td><a href="file:///C:/Desktop/pics.jpg">первая ссылка</a></td><td class="separate"></td>
+            <td><a href="file:///C:/Desktop/pics.jpg">вторая ссылка</a></td><td class="separate"></td>
+            <td><a href="file:///C:/Desktop/pics.jpg">третья ссылка</a></td><td class="separate"></td>
+            <td><a href="file:///C:/Desktop/pics.jpg">четвёртая ссылка</a></td><td class="separate"></td>
+            <td><a href="file:///C:/Desktop/pics.jpg">пятая ссылка</a></td></tr>
+        </table>
+    </div>
+</body>
+</html>

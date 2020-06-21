@@ -1,0 +1,97 @@
+<!doctype html>
+ <html>
+  <head>
+   <title>Выпадающее меню</title>
+   <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet"> 
+   <style>  
+        body {
+            font: 20px;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            background-image: url(fon2.jpg);
+            font-family: 'Comfortaa', cursive;
+        }
+        ul {
+            display: block;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }       
+        ul.menu  {
+            display: flex;
+        }
+        ul.menu > li > span {
+            display: block;
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            background: rgb(175,216,138); /* Применение градиента с сайта */
+            background: -moz-linear-gradient(left,  rgba(175,216,138,1) 0%, rgba(108,163,81,1) 41%, rgba(108,163,81,1) 66%, rgba(175,216,138,1) 99%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left,  rgba(175,216,138,1) 0%,rgba(108,163,81,1) 41%,rgba(108,163,81,1) 66%,rgba(175,216,138,1) 99%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right,  rgba(175,216,138,1) 0%,rgba(108,163,81,1) 41%,rgba(108,163,81,1) 66%,rgba(175,216,138,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#afd88a', endColorstr='#afd88a',GradientType=1 ); /* IE6-9 */
+            text-decoration: none;
+            width: 210px;
+        }
+        ul.menu > li > a:hover {
+            background-color: rgba(137, 204, 60, 0.582);
+        }
+        ul.submenu {
+            display: none;
+            position: absolute;
+            width: 210px;      
+        }
+        ul.submenu > li {
+            display: block;
+        }
+        ul.submenu > li > a {
+            display: block;
+            width: 210px;
+            padding: 10px;
+            color: rgb(255, 255, 255);
+            background-color:rgba(145, 175, 115, 0.603);
+            text-decoration: none;
+        }
+        ul.submenu > li > a:hover {
+            background-color:rgba(42, 121, 42, 0.705);
+            transition: all 0.3s ease;
+        }       
+        ul.menu > li:hover > ul.submenu {
+        display: block;
+        }
+   </style>
+  </head>
+  <body>
+    <span>
+    <ul class="menu">
+            <li><span>👀Лабораторная 3</span>
+                <ul class="submenu">
+                    <li><a href=file:///C:/Desktop/%D0%9B%D0%B0%D0%B1%203/html/page1.html>Страница 1</a></li>
+                    <li><a href=file:///C:/Desktop/%D0%9B%D0%B0%D0%B1%203/html/page2.html>Страница 2</a></li>
+                </ul>
+            </li>
+            <li><span>👀Лабораторная 4</span>
+                <ul class="submenu">
+                    <li><a href=file:///C:/Desktop/Lab4/ex1.html>Страница 1</a></li>
+                    <li><a href=file:///C:/Desktop/Lab4/ex2.html>Страница 2</a></li>
+                    <li><a href=file:///C:/Desktop/Lab4/ex3.html>Страница 3</a></li>
+                    <li><a href=file:///C:/Desktop/Lab4/ex4_1.html>Страница 4.1</a></li>
+                    <li><a href=file:///C:/Desktop/Lab4/ex4_2.html>Страница 4.2 </a></li>
+                    <li><a href=file:///C:/Desktop/Lab4/ex4_3.html>Страница 4.3</a></li>
+                </ul>
+            </li>
+            <li><span>👀Лабораторная 5</span>
+                <ul class="submenu">
+                    <li><a href=file:///C:/Desktop/Lab5/html/page.html>Страница 1 </a></li>    
+                </ul>
+            </li>     
+            <li><span>👀Лабораторная 6</span>
+                <ul class="submenu">
+                    <li><a href=file:///C:/Desktop/Lab6/fly.html>Страница 1</a></li>
+                    <li><a href=file:///C:/Desktop/Lab6/z22.html>Страница 2</a></li>
+                </ul>
+            </li>      
+    </ul>
+    </span>
+</body>
+</html>

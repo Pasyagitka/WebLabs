@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Задание 2</title>
+        <style>
+        div.main{
+        margin-left:auto;
+        margin-right:auto;
+        }     
+        .line1, .line2 {
+        margin: 0;
+        display: inline-flex;       
+        vertical-align: middle;
+        } 
+        #topbottom {
+        height: 3em;
+        width: 7em;
+        background-color: green;
+        display: inline-flex;
+        }
+        #angle {
+        height: 3em;
+        width: 3em;
+        background-color: green;
+        margin: 0;
+        }
+        #sides {
+        width: 3em;
+        height: 7em;
+        background-color: green;
+        margin: 0;
+        }
+        #cell  {
+        height: 7em;
+        width: 7em; 
+        margin: 0;
+        }
+        div.line1 > div:nth-child(even)    {
+        background: rgb(255, 255, 255);
+        }
+        div.line1 > div:nth-child(odd)    {
+        background: rgb(0, 0, 0);
+        }
+        div.line2 > div:nth-child(even)    {
+        background: rgb(0, 0, 0);
+        }
+        div.line2 > div:nth-child(odd)    {
+        background: rgb(255, 255, 255);
+        }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+        <div class="line1">
+            <div id="angle"></div>
+            <script>
+            for( var i=0; i<8; i++)
+            document.write(`<div id="topbottom"></div>`);
+            </script>
+            <div id="angle"></div>
+        </div></br>
+        <script> 
+        for (var i=0; i<4; i++)
+        {
+            document.write(`<div class="line1">
+            <div id="sides"></div>`);
+            for (var j=0; j<8; j++)
+            document.write(`<div id="cell"></div>`);
+            document.write(`<div id="sides"></div></div></br>
+            <div class="line2"><div id="sides"></div>`);
+            for (var j=0; j<8; j++)
+            document.write(`<div id="cell"></div>`);
+            document.write(`<div id="sides"></div></div></br>`);
+        }
+        </script>
+        <div class="line1">
+            <div id="angle"></div>
+            <script>
+            for( var i=0; i<8; i++)
+            document.write(`<div id="topbottom"></div>`);
+            </script>
+            <div id="angle"></div>
+        </div></br>
+    </div>
+    </body>
+</html>
