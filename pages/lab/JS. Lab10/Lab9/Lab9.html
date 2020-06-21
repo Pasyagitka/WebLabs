@@ -1,0 +1,81 @@
+<!doctype html>
+ <html>
+  <head>
+   <title>Lab9</title>
+	<link rel="stylesheet" href="../css/vid8.css">
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>	
+	<script type='text/javascript' src='js/jquery.circulate.js'></script>
+	<style>
+	#ex2 {
+		position: relative;
+	}
+	div.block1 {
+		  position: absolute;
+		  left: 50px;
+		  width: 90px;
+		  height: 90px;
+		  margin: 5px;
+		}
+	div.block2 {
+		position: absolute;
+		left: 300px;
+		width: 90px;
+		height: 90px;
+		margin: 5px;
+	}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$("#flower").draggable();
+			$("#text").draggable();	
+		});
+	</script>	
+ </head>
+ <body>
+	<h2>My second page</h2>	
+	<h3 style="text-align:center">Paragraph №1</h3>
+	<div class="paragraph1">		
+		<b>Rose oil</b> is an important ingredient in the perfume industry. Extraction of minimal amount of this oil requires huge amount of roses (one gram of oil 
+		is produced from two thousand roses). The nice scent of the rose comes from microscopic perfume glands on the petals.
+	</div>
+	<h2 id="text">Paragraph №2</h2>
+	<div class="paragraph2">
+		<b>Flowers provide an eye-catching attribute</b> to an otherwise plain, green-leaved plant. When insects, birds and some bats dip down to take a look at the
+		flower and steal its nectar, they are inadvertently pollinating the plants by moving pollen from the male stamens to the female pistils. Flower is what (following
+		pollination) produces the fruit. It is also where the seed is produced so that more of the same plant will grow in the future. 
+	</div>
+	<div class='flowers'>
+			<img src="4.png" id = "flower" width = 10%>
+			<img id = "img1" src="цветочек.png"  width = 15%>	
+			<img src="3.png"  width = 12% >			
+	</div>
+	<div class="block1">
+		<img src="2.png" id="img4" width="200%">
+	</div>	
+	<div class="block2">
+		<img src="2.png" id="img5" width="200%">
+	</div>			
+	<script>
+		$( "#img4" ).click(function() {
+		$( ".block1" ).animate({ "left": "+=150px" }, "slow" );
+		});	
+		$( "#img5" ).click(function() {
+		$( ".block2" ).animate({ "left": "+=30px", "top": "+=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "+=30px", "top": "+=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "+=30px", "top": "+=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "-=30px", "top": "+=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "-=30px", "top": "+=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "-=30px", "top": "+=10" }, "slow" );
+
+		$( ".block2" ).animate({ "left": "+=30px", "top": "-=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "+=30px", "top": "-=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "+=30px", "top": "-=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "-=30px", "top": "-=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "-=30px", "top": "-=10" }, "slow" );
+		$( ".block2" ).animate({ "left": "-=30px", "top": "-=10" }, "slow" );
+		});		
+	
+	</script>
+ </body>
+</html>

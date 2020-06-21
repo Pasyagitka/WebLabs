@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>9.Графики</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="../source/jquery.canvaswrapper.js"></script>
+	<script language="javascript" type="text/javascript" src="../source/jquery.colorhelpers.js"></script>
+	<script language="javascript" type="text/javascript" src="../source/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="../source/jquery.flot.saturated.js"></script>
+	<script language="javascript" type="text/javascript" src="../source/jquery.flot.browser.js"></script>
+	<script language="javascript" type="text/javascript" src="../source/jquery.flot.drawSeries.js"></script>
+	<script language="javascript" type="text/javascript" src="../source/jquery.flot.uiConstants.js"></script>
+    <script>
+    var tsvet =  []; 
+    $(document).ready(function(){
+    $("#c1", "#c2", "#c3").change(function () {
+            if ($("#c1").is(":checked")) {
+                tsvet =  ["#7B68EE", "#0000FF", "#0000CD"]
+            }
+            else if ($("#c2").is(":checked")) {
+                tsvet =  ["#0000FF", "#0000FF", "#0000CD"]
+            }
+            else 
+                tsvet =  ["#0000CD", "#0000FF", "#0000CD"]
+            });   
+    }); 
+        var series = [],
+                    options = {
+                        // the color theme used for graphs
+                        colors: tsvet,
+                        xaxis: {
+                            show: null, // null = auto-detect, true = always, false = never
+                            position: "bottom", // or "top"
+                            mode: null, // null or "time"
+                            font: null, // null (derived from CSS in placeholder) or object like { size: 11, lineHeight: 13, style: "italic", weight: "bold", family: "sans-serif", variant: "small-caps" }
+                            color: null, // base color, labels, ticks
+                            tickColor: null, // possibly different color of ticks, e.g. "rgba(0,0,0,0.15)"
+                            transform: null, // null or f: number -> number to transform axis
+                            inverseTransform: null, // if transform is set, this should be the inverse function
+                            min: null, // min. value to show, null means set automatically
+                            max: null, // max. value to show, null means set automatically
+                            autoScaleMargin: null, // margin in % to add if autoScale option is on "loose" mode,
+                            autoScale: "exact", // Available modes: "none", "loose", "exact", "sliding-window"
+                            windowSize: null, // null or number. This is the size of sliding-window.
+                            growOnly: null, // grow only, useful for smoother auto-scale, the scales will grow to accomodate data but won't shrink back.
+                            ticks: null, // either [1, 3] or [[1, "a"], 3] or (fn: axis info -> ticks) or app. number of ticks for auto-ticks
+                            tickFormatter: null, // fn: number -> string
+                            showTickLabels: "major", // "none", "endpoints", "major", "all"
+                            labelWidth: null, // size of tick labels in pixels
+                            labelHeight: null,
+                            reserveSpace: null, // whether to reserve space even if axis isn't shown
+                            tickLength: null, // size in pixels of major tick marks
+                            showMinorTicks: null, // true = show minor tick marks, false = hide minor tick marks
+                            showTicks: null, // true = show tick marks, false = hide all tick marks
+                            gridLines: null, // true = show grid lines, false = hide grid lines
+                            alignTicksWithAxis: null, // axis number or null for no sync
+                            tickDecimals: null, // no. of decimals, null means auto
+                            tickSize: null, // number or [number, "unit"]
+                            minTickSize: null, // number or [number, "unit"]
+                            offset: { below: 0, above: 0 }, // the plot drawing offset. this is calculated by the flot.navigate for each axis
+                            boxPosition: { centerX: 0, centerY: 0 } //position of the axis on the corresponding axis box
+                        },
+                        yaxis: {
+                            autoScaleMargin: 0.02, // margin in % to add if autoScale option is on "loose" mode
+                            autoScale: "loose", // Available modes: "none", "loose", "exact"
+                            growOnly: null, // grow only, useful for smoother auto-scale, the scales will grow to accomodate data but won't shrink back.
+                            position: "left", // or "right"
+                            showTickLabels: "major", // "none", "endpoints", "major", "all"
+                            offset: { below: 0, above: 0 }, // the plot drawing offset. this is calculated by the flot.navigate for each axis
+                            boxPosition: { centerX: 0, centerY: 0 } //position of the axis on the corresponding axis box
+                        },
+                        xaxes: [],
+                        yaxes: [],
+                        series: {
+                            points: {
+                                show: false,
+                                radius: 3,
+                                lineWidth: 2, // in pixels
+                                fill: true,
+                                fillColor: "#ffffff",
+                                symbol: 'circle' // or callback
+                            },
+                            lines: {
+                                // we don't put in show: false so we can see
+                                // whether lines were actively disabled
+                                lineWidth: 1, // in pixels
+                                fill: false,
+                                fillColor: null,
+                                steps: false
+                                // Omit 'zero', so we can later default its value to
+                                // match that of the 'fill' option.
+                            },
+                            bars: {
+                                show: false,
+                            
+                            },
+                            shadowSize: 3,
+                            highlightColor: null
+                        },
+                        grid: {
+                            show: false,
+                        },
+                        interaction: {
+                            redrawOverlayInterval: 1000 / 60 // time between updates, -1 means in same flow
+                        },
+                        hooks: {}
+                    },
+                    surface = null, // the canvas for the plot itself
+                    overlay = null, // canvas for interactive stuff on top of plot
+                    eventHolder = null, // jQuery object that events should be bound to
+                    ctx = null,
+                    octx = null,
+                    xaxes = [],
+                    yaxes = [],
+                    plotOffset = {
+                        left: 0,
+                        right: 0,
+                        top: 0,
+                        bottom: 0
+                    },
+                    plotWidth = 0,
+                    plotHeight = 0,
+                    hooks = {
+                        processOptions: [],
+                        processRawData: [],
+                        processDatapoints: [],
+                        processOffset: [],
+                        setupGrid: [],
+                        adjustSeriesDataRange: [],
+                        setRange: [],
+                        drawBackground: [],
+                        drawSeries: [],
+                        drawAxis: [],
+                        draw: [],
+                        axisReserveSpace: [],
+                        bindEvents: [],
+                        drawOverlay: [],
+                        resize: [],
+                        shutdown: []
+                    },
+                    plot = this;
+        
+       	
+        var d2 = new Array();
+		for (var i = -15; i < 15; i += 0.01) {
+			d2.push([i, Math.pow(i,3)]);
+        }
+        var d1 = new Array();
+		for (var i = -15; i < 15; i += 0.01) {
+			d1.push([i, Math.pow(i,2)]);
+        }
+        var d3 = new Array();
+		for (var i = -15; i < 15; i += 0.01) {
+			d3.push([i, Math.sin(i)]);
+        }
+        var d4 = new Array();
+		for (var i = -15; i < 15; i += 0.01) {
+			d4.push([i, Math.cos(i)]);
+        }
+        $(document).ready(function(){
+            $("#n1").bind("click", function() {
+            $.plot($("#placeholder"), [ d1 ])
+            })
+
+            $("#n2").bind("click", function() {
+            $.plot($("#placeholder"), [ d2 ])
+            })
+
+            $("#n3").bind("click", function() {
+            $.plot($("#placeholder"), [ d3 ])
+            })
+            // $("#color").bind("onchange", function() {
+            // $("#color").val();
+            // return color;
+            // })        
+            $("#n4").bind("click", function() {
+            $.plot($("#placeholder"), [ d4 ])
+            })
+           
+            
+         });
+       
+     </script>
+     </head>
+    <body>
+        <div id="placeholder" style="width:600px; height:300px; margin:auto;"></div>  
+        <div style="width:600px; height:300px; margin:auto;">   
+            <input id="n1" type="radio" name="func" value="x^2">   y=x^2
+            <input id="n2" type="radio" name="func" value="x^3">   y=x^2
+            <input id="n3" type="radio" name="func" value="sin(x)"> y=sin(x)
+            <input id="n4" type="radio" name="func" value="cos(x)"> y=cos(x)
+        </div>
+        <div style="width:600px; height:5px; margin:auto;">           
+            <input id="c1" type="radio" name="color">  
+            <input id="c2" type="radio" name="color">  
+            <input id="c3" type="radio" name="color"> 
+        </div>
+            <!-- <input type="color" list="colors" id="color" name="color">
+            <datalist id="colors">
+                    <option value="#7B68EE" label="MediumSlateBlue"></option>
+                    <option value="#4169E1" label="DeepSkyBlue"></option>
+                    <option value="#0000FF" label="green"></option>
+                    <option value="#0000CD" label="blue"></option>
+                    <option value="#191970" label="DeepPink"></option>
+          </datalist>  -->  
+    </body>
+</html>
