@@ -66,11 +66,11 @@ div.block a {
     background-color: rgb(166, 214, 133);
 }
 .block:first-child {
-    background-image: url(../images/green1.jpg);
+    background-image: url(../../images/green1.jpg);
     background-size: cover;
 }
 .block:nth-child(7) {
-    background-image: url(../images/green4.jpg);
+    background-image: url(../../images/green4.jpg);
     background-size: cover;
 }
 div.block:hover {
