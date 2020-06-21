@@ -74,7 +74,7 @@ div.block a {
     background-color: rgb(199, 100, 202);
 }
 .block:nth-child(2) {
-    background-image: url(../images/purple1.jpg);
+    background-image: url(../../images/purple1.jpg);
     background-size: cover;
 }
 div.block:hover {
