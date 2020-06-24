@@ -10,11 +10,16 @@
             <input type="radio" name="func" value="x^3" onclick="x3()">   y=x^3
             <input type="radio" name="func" value="sin(x)" onclick="sin()"> y=sin(x)
             <input type="radio" name="func" value="cos(x)" onclick="cos()"> y=cos(x)</br>
-            Выберите цвет графика: <input type="color" id = "color" onchange="color()">
+            <label for="colors">Выберите цвет графика:</label>
+            <select class="colors">
+                <option value="#7B68EE">MediumSlateBlue</option>
+                <option value="#4169E1">DeepSkyBlue</option>
+                <option value="#191970">DeepPink</option>
+            </select>
         </div>
         <script> 
             function color() {
-            let color = document.querySelector('#color').value;
+            let color = document.querySelector('.colors').value;
             return color;
             }  
 
