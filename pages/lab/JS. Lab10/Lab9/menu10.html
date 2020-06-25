@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>10. Меню</title>
+        <style>
+            body {
+                background-color: rgb(68, 68, 68);
+                text-align: center;
+                color: white;
+            }
+            #nav {
+                background: -moz-linear-gradient(45deg,  #c146a1 42%, #db36a4 78%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(45deg,  #c146a1 42%,#db36a4 78%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(45deg,  #c146a1 42%,#db36a4 78%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                line-height: 3em;
+            }
+            .menu-item{
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            border-bottom: 2px solid rgb(255, 255, 255);
+            margin: 0 7 0 7;
+            width: 152;
+            }
+            .menu-item .submenu{
+            display: none;
+            height: 40px;
+            width: 152;
+            position: absolute;
+            cursor: pointer;
+            }
+            a {
+            background-color: #c146a09d;
+            display: block;
+            text-decoration: none;
+            color: white;
+            padding: 5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.349);
+            }
+        </style>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('.menu-item').hover(
+                function() {
+                    $('.submenu', this).slideDown(100);
+                },
+                function() {
+                    $('.submenu', this).slideUp(100);
+                }
+            );
+        });
+        </script>
+    </head>
+    <body>
+        <div id="nav">
+            <div class="menu-item">
+                Первый пункт меню
+                <div class="submenu">
+                    <a href ="#">Подменю 1</a>
+                    <a href ="#">Подменю 2</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                Второй пункт меню
+                <div class="submenu">
+                    <a href ="#">Подменю 1</a>
+                    <a href ="#">Подменю 2</a>
+                    <a href ="#">Подменю 3</a>
+                    <a href ="#">Подменю 4</a>
+                    <a href ="#">Подменю 5</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                Третий пункт меню
+                <div class="submenu">
+                    <a href ="#">Подменю 1</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
