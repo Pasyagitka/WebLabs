@@ -1,6 +1,6 @@
 body {
    background-color: rgba(65, 65, 65, 0.856);
-   background-image: url(https://storge.pic2.me/upload/991/59690897cd0a8.jpg);
+   background-image: url(../../images/jsbackground.jpg);
 }
 .header_js {
     display: grid;
